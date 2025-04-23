@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIC Project - Technical</title>
+  <link rel="stylesheet" href="/static/styles/tech.css">
+  <style>
+    /* Ensure sidebar and content fill full viewport height */
+    .columns {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .column {
+      flex: 1;
+      background: #34495e;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+    }
+    .column img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin-bottom: 15px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .column h4 {
+      color: #e67e22;
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+    .column p {
+      line-height: 1.6;
+      color: #ecf0f1;
+    }
+    @media (max-width: 768px) {
+      .columns {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        HIC Project<br>Group Nine
+      </div>
+      <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='info.html'">Info</button>
+        <h3>Topics</h3>
+        <button onclick="location.href='generated.html'">Generated Structures</button>
+        <button onclick="location.href='tech.html'" class="active">Technical</button>
+        <button onclick="location.href='other.html'">Other Media</button>
+        <button onclick="location.href='biomes.html'">Biomes</button>
+        <button onclick="location.href='vote.html'">Vote a Biome!</button>
+        <h3>Authors</h3>
+        <button onclick="location.href='about.html'">About Us</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Technical</h1>
+      <hr>
+      <section class="columns">
+
+        <div class="column">
+          <img src="/static/pictures/redstone.png" alt="Redstone">
+          <h4>Redstone</h4>
+          <p>Redstone dust is Minecraft’s version of electrical wiring. It transmits power, enabling mechanisms like automated doors, piston platforms, and complex circuits.</p>
+        </div>
+
+        <div class="column">
+          <img src="/static/pictures/mob_farm.png" alt="Mob Farm">
+          <h4>Mob Farms</h4>
+          <p>Mob farms are player-built structures that spawn, trap, and kill mobs automatically, providing resources such as gunpowder, bones, string, and experience points.</p>
+        </div>
+
+        <div class="column">
+          <img src="/static/pictures/mods.png" alt="Mods">
+          <h4>Mods</h4>
+          <p>Mods are community-created modifications that expand the game with new blocks, items, mechanics, or entire dimensions, customizing the experience beyond vanilla Minecraft.</p>
+        </div>
+
+      </section>
+    </main>
+  </div>
+</body>
+</html>
