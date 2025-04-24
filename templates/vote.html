@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HIC Project - Vote</title>
+  <link rel="stylesheet" href="/static/styles/vote.css">
+  <link rel="icon" type="image/x-icon" href="/static/pictures/creeperIcon.png">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">HIC Project<br>Group Nine</div>
+      <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='info.html'">Info</button>
+        <h3>Topics</h3>
+        <button onclick="location.href='generated.html'">Generated Structures</button>
+        <button onclick="location.href='tech.html'">Technical</button>
+        <button onclick="location.href='other.html'">Other Media</button>
+        <button onclick="location.href='biomes.html'">Biomes</button>
+        <button onclick="location.href='vote.html'">Vote!</button>
+        <h3>Authors</h3>
+        <button onclick="location.href='about.html'">About Us</button>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h1>Vote</h1>
+      <hr>
+    
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <div class="flash">
+            {% for message in messages %}
+              <p>{{ message }}</p>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endwith %}
+
+      <h2>Vote for a Mob</h2>
+      <form method="POST" action="/vote-mob" class="vote-form">
+        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
+          {% for mob in mobs %}
+          <div class="col">
+            <div class="card h-100 text-center">
+              <div class="card-body">
+                <h5 class="card-title">{{ mob }}</h5>
+                <img src="/static/pictures/voting/mob/{{ mob }}.png" class="card-img-top" alt="{{ mob }} image" width="100">
+                <div>
+                  <input type="radio" id="{{ mob }}" name="mob" value="{{ mob }}" required>
+                  <label for="{{ mob }}">Select</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+        <div class="submit-btn">
+          <button type="submit">Submit Mob Vote</button>
+        </div>
+      </form>
+      <hr>
+    </main>    
+  </div>
+</body>
+</html>
