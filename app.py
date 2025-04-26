@@ -65,5 +65,13 @@ def vote_mob():
 def about():
     return render_template('about.html')
 
+@app.route('/results.html')
+def results():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT mobVote, COUNT(*) as vote_count FROM vote GROUP BY mobVote ORDER BY vote_count DESC")
+    results = cur.fetchall()
+    cur.close()
+    return render_template('results.html', results=results)
+
 if __name__ == '__main__':
     app.run(debug=True)

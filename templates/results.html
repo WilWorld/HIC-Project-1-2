@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- important for responsiveness -->
+  <title>HIC Project</title>
+  <link rel="icon" type="image/x-icon" href="/static/pictures/creeperIcon.png">
+  <link rel="stylesheet" href="/static/styles/results.css">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">
+        HIC Project<br>Group Nine
+      </div>
+      <nav>
+        <button onclick="location.href='index.html'">Home</button>
+        <button onclick="location.href='info.html'">Info</button>
+        <h3>Topics</h3>
+        <button onclick="location.href='generated.html'">Generated Structures</button>
+        <button onclick="location.href='tech.html'">Technical</button>
+        <button onclick="location.href='other.html'">Other Media</button>
+        <button onclick="location.href='biomes.html'">Biomes</button>
+        <button onclick="location.href='vote.html'">Vote!</button>
+        <h3>Authors</h3>
+        <button onclick="location.href='about.html'">About Us</button>
+      </nav>
+    </aside>
+    <main class="content">
+        <h1>Voting Results</h1>
+        
+        {% if results %}
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Mob</th>
+                <th>Votes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for mob, count in results %}
+              <tr>
+                <td>{{ mob }}</td>
+                <td>{{ count }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>No votes yet!</p>
+        {% endif %}
+        
+        <br>
+        <button onclick="location.href='vote.html'">Back to Voting</button>
+      </main>      
+  </div>
+</body>
+</html>
+<div>

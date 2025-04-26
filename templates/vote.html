@@ -42,7 +42,7 @@
 
       <h2>Vote for a Mob</h2>
       <form method="POST" action="/vote-mob" class="vote-form">
-        <div class="row row-cols-1 row-cols-md-3 g-4 mx-auto">
+        <div>
           {% for mob in mobs %}
           <div class="col">
             <div class="card h-100 text-center">
@@ -60,6 +60,7 @@
         </div>
         <div class="submit-btn">
           <button type="submit">Submit Mob Vote</button>
+          <button onclick="location.href='results.html'">See Results</button>
         </div>
       </form>
       <hr>
