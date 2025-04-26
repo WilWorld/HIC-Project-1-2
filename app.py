@@ -37,6 +37,10 @@ def tech():
 def other():
     return render_template('other.html')
 
+@app.route('/buzzwords.html')
+def buzzwords():
+    return render_template('buzzwords.html')
+
 @app.route('/biomes.html')
 def biomes():
     return render_template('biomes.html')
